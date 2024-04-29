@@ -1,0 +1,28 @@
+Nazwa projektu: RoomReserveUAM
+
+Autorzy: Filip Musiałek, Miłosz Pawelec, Oskar Ciesak, Tomasz Winiarski
+Data: 4.17.2024
+
+Wizja projektu
+RoomReserveUAM to aplikacja webowa stworzona dla Uniwersytetu Adama Mickiewicza w Pile, mająca na celu ułatwienie procesu rezerwacji sal oraz dostarczenie informacji o wydarzeniach odbywających się na uczelni. Oprócz podstawowej funkcjonalności rezerwacji sal, aplikacja umożliwia dodawanie informacji o wydarzeniach oraz wyświetlanie aktualnej zajętości sal na ekranach informacyjnych przed salami. Dodatkowo, aplikacja oferuje mapę uczelni z zaznaczonymi salami, a także możliwość filtrowania sal na podstawie ich wyposażenia, co ułatwia użytkownikom znalezienie odpowiedniej sali do swoich potrzeb.
+
+Cel i grupa docelowa
+RoomReserveUAM został stworzony w celu usprawnienia procesu rezerwacji sal oraz zapewnienia informacji o wydarzeniach dla pracowników i studentów Uniwersytetu Adama Mickiewicza w Pile. Grupa docelowa to przede wszystkim pracownicy administracyjni zajmujący się rezerwacją sal oraz osoby organizujące wydarzenia na uczelni, które będą korzystać z aplikacji do planowania i zarządzania swoimi spotkaniami i konferencjami.
+
+Rynek
+RoomReserveUAM konkuruje z istniejącymi systemami rezerwacji sal oraz aplikacjami do zarządzania wydarzeniami, jednak wyróżnia się dodatkowymi funkcjonalnościami, takimi jak wyświetlanie informacji o salach na ekranach informacyjnych oraz możliwość filtrowania sal na podstawie ich wyposażenia, co czyni go bardziej atrakcyjnym dla użytkowników.
+
+Opis produktu
+Rezerwacja sal: Umożliwia użytkownikom rezerwację sal na konferencje, spotkania oraz inne wydarzenia.
+Dodawanie informacji o wydarzeniach: Pozwala użytkownikom dodawać informacje o planowanych wydarzeniach do kalendarza uczelni.
+Wyświetlanie zajętości sal: Informuje użytkowników o aktualnej zajętości sal na ekranach informacyjnych przed salami.
+Mapa uczelni: Prezentuje mapę uczelni z zaznaczonymi salami, ułatwiając użytkownikom znalezienie odpowiedniej lokalizacji.
+Filtrowanie sal: Pozwala użytkownikom filtrować dostępne sale na podstawie ich wyposażenia, co ułatwia znalezienie sali odpowiadającej ich potrzebom.
+Zakres i ograniczenia
+Projekt zostanie podzielony na kilka etapów:
+Przygotowanie danych: Pobranie danych o dostępnych salach z oficjalnej strony Uniwersytetu Adama Mickiewicza w Pile.
+Implementacja podstawowych funkcji: Stworzenie podstawowego interfejsu użytkownika umożliwiającego rezerwację sal oraz dodawanie informacji o wydarzeniach.
+Integracja z ekranami informacyjnymi: Implementacja funkcji wyświetlania zajętości sal na ekranach informacyjnych przed salami.
+Dodatkowe funkcje: Dodanie funkcji mapy uczelni, filtrowania sal oraz integracja z różnymi formatami danych (Word, Excel) w celu dodawania informacji o wydarzeniach.
+
+Kamieniem milowym na pierwszy semestr będzie stworzenie intefejsu, pobieranie danych ze stron UAM oraz dodawanie wydarzeń. Kamieniem milowym na drugi semestr będzie pobieranie danych z Word, Excel, pdf oraz wyświetlanie informacji przed salami.
