@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wyszukiwanie Wolnych Sal - RoomReserveUAM</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RoomReserveUAM</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="search.html">Wyszukiwanie wolnych sal</a></li>
+                    <li><a href="reservation.html">Wyszukiwanie sal</a></li>
+                    <li><a href="my_reservations.html">Moje rezerwacje</a></li>
+                    <li><a href="my_events.html">wydarzenia</a></li>
+                    <li><a href="login.html">Logowanie</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <h2>Wyszukiwanie wolnych sal</h2>
+            <form id="room-search-form" method="post" action="search_rooms.php">
+                <label for="department">Wydział:</label>
+                <select id="department" name="department" required>
+                    <option value="" disabled selected>Wybierz wydział</option>
+                    <option value="wydzial1">Wydział 1</option>
+                    <option value="wydzial2">Wydział 2</option>
+                    <option value="wydzial3">Wydział 3</option>
+                    <!-- Dodaj więcej wydziałów w razie potrzeby -->
+                </select>
+
+                <label for="building">Budynek:</label>
+                <select id="building" name="building" required>
+                    <option value="" disabled selected>Wybierz budynek</option>
+                    <option value="budynek1">Budynek 1</option>
+                    <option value="budynek2">Budynek 2</option>
+                    <option value="budynek3">Budynek 3</option>
+                    <!-- Dodaj więcej budynków w razie potrzeby -->
+                </select>
+
+                <label for="search-date-start">Data początkowa:</label>
+                <input type="date" id="search-date-start" name="searchdatestart" required>
+                
+                <label for="search-date-end">Data końcowa:</label>
+                <input type="date" id="search-date-end" name="searchdateend" required>
+
+                <label for="search-time-start">Godzina początkowa:</label>
+                <input type="time" id="search-time-start" name="searchtimestart" required>
+                
+                <label for="search-time-end">Godzina końcowa:</label>
+                <input type="time" id="search-time-end" name="searchtimeend" required>
+                
+                <button type="submit">Szukaj</button>
+            </form>
+            
+            <button id="test-button">Testuj brak wolnych sal</button>
+
+            <div id="search-results">
+                <!-- Wyniki wyszukiwania zostaną wyświetlone tutaj -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('test-button').addEventListener('click', function() {
+            alert('Brak wolnych sal');
+        });
+    </script>
+</body>
+</html>

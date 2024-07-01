@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Wydarzenia - RoomReserveUAM</title>
+    <link rel="stylesheet" href="styles4.css">
+    <style>
+        .event {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .event h3 {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .event-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RoomReserveUAM</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="search.html">Wyszukiwanie wydarzeń</a></li>
+                    <li><a href="reservation.html">Rezerwacja sal</a></li>
+                    <li><a href="my_reservations.html">Moje rezerwacje</a></li>
+                    <li><a href="my_events.html">wydarzenia</a></li>
+                    <li><a href="login.html">Logowanie</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <h2>Moje Wydarzenia</h2>
+            <div class="event">
+                <h3 onclick="toggleDescription('desc1')">Pilkon</h3>
+                <div id="desc1" class="event-description">
+                    <p>Opis: Pilkon to największy konwent fanów fantastyki w regionie.</p>
+                    <button onclick="showOnCalendar()">Pokaż na kalendarzu</button>
+                </div>
+            </div>
+            <div class="event">
+                <h3 onclick="toggleDescription('desc2')">Zbieranie miodu</h3>
+                <div id="desc2" class="event-description">
+                    <p>Opis: Warsztaty na temat tradycyjnych metod zbierania miodu.</p>
+                    <button onclick="showOnCalendar()">Pokaż na kalendarzu</button>
+                </div>
+            </div>
+            <div class="event">
+                <h3 onclick="toggleDescription('desc3')">Prezentacja nowego komputera</h3>
+                <div id="desc3" class="event-description">
+                    <p>Opis: Prezentacja najnowszego modelu komputera firmy XYZ.</p>
+                    <button onclick="showOnCalendar()">Pokaż na kalendarzu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(id) {
+            const description = document.getElementById(id);
+            if (description.classList.contains('show')) {
+                description.classList.remove('show');
+            } else {
+                description.classList.add('show');
+            }
+        }
+
+        function showOnCalendar() {
+            alert('Docelowo będzie pokazywany termin, w jakim będzie odbywało się wydarzenie.');
+        }
+    </script>
+</body>
+</html>
