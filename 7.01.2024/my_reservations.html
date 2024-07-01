@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Rezerwacje - RoomReserveUAM</title>
+    <link rel="stylesheet" href="styles5.css">
+    <style>
+        .room {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .room h3 {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .room-description {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RoomReserveUAM</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona główna</a></li>
+                    <li><a href="search.html">Wyszukiwanie wydarzeń</a></li>
+                    <li><a href="reservation.html">Rezerwacja sal</a></li>
+                    <li><a href="my_reservations.html">lista sal</a></li>
+                    <li><a href="my_events.html">Moje wydarzenia</a></li>
+                    <li><a href="login.html">Logowanie</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="content">
+            <h2>lista sal</h2>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc1')">Aula 150 os.</h3>
+                <div id="desc1" class="room-description">
+                    <p>Rzutnik multimedialny, ekran, mikrofon bezprzewodowy, wizualizer, nagrywarka DVD, komputer, dostęp do Internetu, tablica, siedziska i stoliki audytoryjne</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc2')">Aula 260 os.</h3>
+                <div id="desc2" class="room-description">
+                    <p>Rzutnik multimedialny, ekran, mikrofon bezprzewodowy, wizualizer, nagrywarka DVD, komputer, dostęp do Internetu, tablica, siedziska i stoliki audytoryjne</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc3')">8 sal 30 osobowych</h3>
+                <div id="desc3" class="room-description">
+                    <p>Krzesła i stoliki drewniane, rzutnik</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc4')">2 sale 70 osobowe</h3>
+                <div id="desc4" class="room-description">
+                    <p>Rzutnik multimedialny, ekran, mikrofon bezprzewodowy, wizualizer, nagrywarka DVD, komputer, dostęp do Internetu, tablica, siedziska i stoliki audytoryjne</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc5')">1 sala 25 os.</h3>
+                <div id="desc5" class="room-description">
+                    <p>Stoliki audytoryjne</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc6')">1 sala komputerowa 21 os, 4 sale komp. 16 os.</h3>
+                <div id="desc6" class="room-description">
+                    <p>Rzutniki, tablice, flipcharty</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc7')">2 laboratoria geologiczne 20 osobowe</h3>
+                <div id="desc7" class="room-description">
+                    <p>Tablice, stoły drewniane, krzesła tapicerowane</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc8')">2 lab. językowe 20 os.</h3>
+                <div id="desc8" class="room-description">
+                    <p>Krzesła tapicerowane</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc9')">Laboratorium chemiczne 20 os.</h3>
+                <div id="desc9" class="room-description">
+                    <p>2 dygestoria, autoklaw, stoły kwasoodporne, umywalki, prysznic, 2 zaplecza, tablica</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc10')">Lab. biologiczno-zoologiczne 24 os.</h3>
+                <div id="desc10" class="room-description">
+                    <p>Stoły kwasoodporne, umywalki, tablica, zaplecze</p>
+                </div>
+            </div>
+            <div class="room">
+                <h3 onclick="toggleDescription('desc11')">Lab. hydrobiologii 20 os.</h3>
+                <div id="desc11" class="room-description">
+                    <p>Stoły kwasoodporne, umywalki, tablica, zaplecze</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDescription(id) {
+            const description = document.getElementById(id);
+            if (description.classList.contains('show')) {
+                description.classList.remove('show');
+            } else {
+                description.classList.add('show');
+            }
+        }
+    </script>
+</body>
+</html>
