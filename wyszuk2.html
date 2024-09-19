@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaawansowane Wyszukiwanie</title>
+	<link rel="stylesheet" href="stylee.css">	
+</head>
+<body>
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Szukaj...">
+            <button>Szukaj!</button>
+        </div>
+	<nav class="menu">
+	  <ul class="menu-left">
+			<li><a href="#">wydzial</a>
+			<ul class="dropdown">
+                <div class="filters">
+					<div class="filter-group">
+					<label>wydzial</label>
+						<ul>
+							<li><input type="checkbox" id="akcja"><label for="akcja">uam pila</label></li>
+							<li><input type="checkbox" id="dramat"><label for="dramat">uam poznan</label></li>
+							<li><input type="checkbox" id="komedia"><label for="komedia">uam gniezno</label></li>
+							<li><input type="checkbox" id="fantasy"><label for="fantasy">uam krakow</label></li>
+							<li><input type="checkbox" id="horror"><label for="horror">uam jelenia gora</label></li>
+							<!-- Dodaj więcej gatunków w razie potrzeby -->
+						</ul>
+					<br>
+					<label>budynek</label>
+						<ul>
+							<li><input type="checkbox" id="akcja"><label for="akcja">budynek1</label></li>
+							<li><input type="checkbox" id="dramat"><label for="dramat">budynek2</label></li>
+							<li><input type="checkbox" id="komedia"><label for="komedia">budynek3</label></li>
+							<li><input type="checkbox" id="fantasy"><label for="fantasy">budynek4</label></li>
+							<li><input type="checkbox" id="horror"><label for="horror">budynek5</label></li>
+							<!-- Dodaj więcej gatunków w razie potrzeby -->
+						</ul>
+					<br>
+					<label>kierunek</label>
+						<ul>
+							<li><input type="checkbox" id="akcja"><label for="akcja">technologie inzynieryjn</label></li>
+							<li><input type="checkbox" id="dramat"><label for="dramat">techniki zywienia</label></li>
+							<li><input type="checkbox" id="komedia"><label for="komedia">historia</label></li>
+							<li><input type="checkbox" id="fantasy"><label for="fantasy">matematyka</label></li>
+							<li><input type="checkbox" id="horror"><label for="horror">fizyka</label></li>
+							<!-- Dodaj więcej gatunków w razie potrzeby -->
+						</ul>
+					
+					
+					</div>
+                </ul>
+			<li><a href="#">budynek</a>
+			<ul class="dropdown">
+                <div class="filters">
+					<div class="filter-group">
+					<label>Gatunki</label>
+						<ul>
+							<li><input type="checkbox" id="akcja"><label for="akcja">Akcja</label></li>
+							<li><input type="checkbox" id="dramat"><label for="dramat">Dramat</label></li>
+							<li><input type="checkbox" id="komedia"><label for="komedia">Komedia</label></li>
+							<li><input type="checkbox" id="fantasy"><label for="fantasy">Fantasy</label></li>
+							<li><input type="checkbox" id="horror"><label for="horror">Horror</label></li>
+							<!-- Dodaj więcej gatunków w razie potrzeby -->
+						</ul>
+					</div>
+                </ul>
+			<li><a href="#">wykladowca</a>
+				<ul class="dropdown">
+                    <li><a href="#">pilkon</a></li>
+                    <li><a href="#">garncarstwo</a></li>
+                    <li><a href="#">wyklad100lecia</a></li>
+                </ul>
+            <li><a href="#">data i godzina</a>
+				<ul class="dropdown">
+                    <label for="search-date-start">Data początkowa:</label>
+					<input type="date" id="search-date-start" name="searchdatestart" required>
+                
+					<label for="search-date-end">Data końcowa:</label>
+					<input type="date" id="search-date-end" name="searchdateend" required>
+
+					<label for="search-time-start">Godzina początkowa:</label>
+					<input type="time" id="search-time-start" name="searchtimestart" required>
+                
+					<label for="search-time-end">Godzina końcowa:</label>
+					<input type="time" id="search-time-end" name="searchtimeend" required>
+                </ul>
+			<li><a href="#">liczba osob</a>
+				<ul class="dropdown">
+				<label for="capacity">Liczba osób:</label>
+                <input type="number" id="capacity" name="capacity" min="1" required>
+				</ul>
+			<li><a href="#">dostepnosc</a>
+				<ul class="dropdown">	
+					<li><input type="checkbox" id="wolna"><label for="wolna">wolna</label></li>
+					<li><input type="checkbox" id="zajeta"><label for="zajeta">zajeta</label></li>
+				</ul>
+			<button>Szukaj!</button>
+		</ul>
+	</nav>

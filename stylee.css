@@ -1,0 +1,62 @@
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D3D3D3;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    position: relative;
+    margin-right: 30px; /* Dodanie odstępów między tytułami w menu */
+}
+
+.menu-left ul li a {
+    color: white; /* Zmienia kolor napisów na biały */
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Ukrywanie rozwijanego menu (dropdown) */
+.menu ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fce600;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.menu ul li .dropdown li {
+    display: block;
+}
+
+.menu ul li .dropdown li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu ul li .dropdown li a:hover {
+    background-color: #444;
+}
+
+/* Pokazywanie rozwijanego menu (dropdown) po najechaniu */
+.menu ul li:hover .dropdown {
+    display: block;
+}
+
+.menu ul li:hover > a {
+    background-color: #444;
+}
