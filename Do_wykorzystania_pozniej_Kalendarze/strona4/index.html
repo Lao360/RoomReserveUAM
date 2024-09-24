@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosty Kalendarz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2 id="current-month-year"></h2>
+
+<label for="month-select">Miesiąc:</label>
+<select id="month-select"></select>
+
+<label for="year-select">Rok:</label>
+<select id="year-select"></select>
+
+<table id="calendar" class="calendar">
+  <thead>
+    <tr>
+      <th>Pon</th>
+      <th>Wt</th>
+      <th>Śr</th>
+      <th>Czw</th>
+      <th>Pt</th>
+      <th>Sob</th>
+      <th>Nd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Tu będą dynamicznie generowane dni miesiąca -->
+  </tbody>
+</table>
+
+<button id="prev-month">Poprzedni miesiąc</button>
+<button id="next-month">Następny miesiąc</button>
+<button id="today">Dzisiaj</button>
+
+<p id="selected-date-info"></p> <!-- Nowy element do wyświetlania informacji o wybranym dniu -->
+
+<script src="script.js"></script>
+</body>
+</html>

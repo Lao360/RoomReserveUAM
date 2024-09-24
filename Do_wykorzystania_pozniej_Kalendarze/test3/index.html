@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Przykładowa Strona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RoomReserveUAM</h1>
+        </header>
+        
+        <div class="content">
+            <div class="left">
+                <h2 id="current-month-year"></h2>
+
+                <label for="month-select">Miesiąc:</label>
+                <select id="month-select"></select>
+
+                <label for="year-select">Rok:</label>
+                <select id="year-select"></select>
+
+                <table id="calendar-month" class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Pon</th>
+                            <th>Wt</th>
+                            <th>Śr</th>
+                            <th>Czw</th>
+                            <th>Pt</th>
+                            <th>Sob</th>
+                            <th>Nd</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Tu będą dynamicznie generowane dni miesiąca -->
+                    </tbody>
+                </table>
+
+                <button id="prev-month">Poprzedni miesiąc</button>
+                <button id="next-month">Następny miesiąc</button>
+                <button id="today-month">Dzisiaj</button>
+
+                <p id="selected-date-info"></p> <!-- Nowy element do wyświetlania informacji o wybranym dniu -->
+            </div>
+            <div class="right">
+                <h2>Kalendarz tygodniowy</h2>
+                <table id="calendar-week" class="calendar">	
+                    <tbody>
+                        <!-- Tu będą dynamicznie generowane godziny -->
+                    </tbody>
+                </table>
+
+                <button id="prev-week">Poprzedni tydzień</button>
+                <button id="next-week">Następny tydzień</button>
+                <button id="today-week">Dzisiaj</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>Stopka</p>
+        </footer>
+    </div>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

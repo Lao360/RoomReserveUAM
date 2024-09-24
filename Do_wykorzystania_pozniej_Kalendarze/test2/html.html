@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalendarze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Kalendarz miesięczny -->
+    <div id="monthly-calendar">
+        <h2 id="current-month-year"></h2>
+        <button id="prev-month">Poprzedni miesiąc</button>
+        <button id="next-month">Następny miesiąc</button>
+        <button id="today-month">Dziś</button>
+        <select id="month-select"></select>
+        <select id="year-select"></select>
+        <table id="calendar">
+            <thead>
+                <tr>
+                    <th>Pn</th>
+                    <th>Wt</th>
+                    <th>Śr</th>
+                    <th>Cz</th>
+                    <th>Pt</th>
+                    <th>Sob</th>
+                    <th>Ndz</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <p id="selected-date-info">Wybrałeś: </p>
+    </div>
+
+    <!-- Kalendarz tygodniowy -->
+    <div id="weekly-calendar">
+        <h2>Kalendarz tygodniowy</h2>
+        <button id="prev-week">Poprzedni tydzień</button>
+        <button id="next-week">Następny tydzień</button>
+        <button id="today-week">Dziś</button>
+        <table id="week-calendar">
+            <thead>
+                <tr>
+                    <th>Godzina</th>
+                    <th>Poniedziałek</th>
+                    <th>Wtorek</th>
+                    <th>Środa</th>
+                    <th>Czwartek</th>
+                    <th>Piątek</th>
+                    <th>Sobota</th>
+                    <th>Niedziela</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

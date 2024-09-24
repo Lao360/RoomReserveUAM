@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosty Kalendarz</title>
+  <style>
+    /* Stylowanie kalendarza */
+    .calendar {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    .calendar th,
+    .calendar td {
+      border: 1px solid #dddddd;
+      text-align: center;
+      padding: 8px;
+    }
+    .calendar th {
+      background-color: #f2f2f2;
+    }
+    .calendar td {
+      cursor: pointer;
+    }
+    .calendar td.today {
+      background-color: #e6e6e6;
+    }
+    .calendar td.selected {
+      background-color: #b3d9ff;
+    }
+  </style>
+</head>
+<body>
+
+<h2 id="current-month-year"></h2>
+
+<table id="calendar" class="calendar">
+  <thead>
+    <tr>
+      <th>Pon</th>
+      <th>Wt</th>
+      <th>Śr</th>
+      <th>Czw</th>
+      <th>Pt</th>
+      <th>Sob</th>
+      <th>Nd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Tu będą dynamicznie generowane dni miesiąca -->
+  </tbody>
+</table>
+
+<button onclick="previousMonth()">Poprzedni miesiąc</button>
+<button onclick="nextMonth()">Następny miesiąc</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var today = new Date();
+    var currentMonth = today.getMonth();
+    var currentYear = today.getFullYear();
+    
+    renderCalendar(currentYear, currentMonth);
+    
+    function renderCalendar(year, month) {
+      var firstDay = new Date(year, month, 1);
+      var lastDay = new Date(year, month + 1, 0);
+      var numDays = lastDay.getDate();
+      var startingDay = firstDay.getDay();
+
+      var tableBody = document.querySelector('#calendar tbody');
+      tableBody.innerHTML = '';
+
+      var date = 1;
+      for (var i = 0; i < 6; i++) {
+        var row = document.createElement('tr');
+
+        for (var j = 0; j < 7; j++) {
+          var cell = document.createElement('td');
+          if (i === 0 && j < startingDay) {
+            var cellText = document.createTextNode('');
+            cell.appendChild(cellText);
+          } else if (date > numDays) {
+            break;
+          } else {
+            cell.addEventListener('click', function() {
+              var selectedDate = new Date(currentYear, currentMonth, this.textContent);
+              selectDate(selectedDate);
+            });
+            if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+              cell.classList.add('today');
+            }
+            cell.textContent = date;
+            date++;
+          }
+          row.appendChild(cell);
+        }
+        tableBody.appendChild(row);
+      }
+      document.getElementById('current-month-year').textContent = getMonthName(month) + ' ' + year;
+    }
+
+    function selectDate(date) {
+      var selectedCell = document.querySelector('.selected');
+      if (selectedCell) {
+        selectedCell.classList.remove('selected');
+      }
+      var calendarCells = document.querySelectorAll('.calendar td');
+      calendarCells.forEach(function(cell) {
+        var cellDate = new Date(currentYear, currentMonth, cell.textContent);
+        if (cellDate.toDateString() === date.toDateString()) {
+          cell.classList.add('selected');
+        }
+      });
+    }
+
+    function getMonthName(month) {
+      var months = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'];
+      return months[month];
+    }
+
+    function previousMonth() {
+      currentMonth--;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar(currentYear, currentMonth);
+    }
+
+    function nextMonth() {
+      currentMonth++;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      renderCalendar(currentYear, currentMonth);
+    }
+  });
+</script>
+
+</body>
+</html>

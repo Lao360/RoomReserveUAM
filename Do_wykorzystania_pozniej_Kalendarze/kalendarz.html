@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalendarz z Przyciskami</title>
+<style>
+    .calendar {
+        font-family: Arial, sans-serif;
+    }
+    .calendar table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .calendar th, .calendar td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    .calendar th {
+        background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<div class="calendar">
+    <h2>Kalendarz z Przyciskami</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Niedz</th>
+                <th>Pon</th>
+                <th>Wt</th>
+                <th>Śr</th>
+                <th>Czw</th>
+                <th>Pt</th>
+                <th>Sob</th>
+            </tr>
+        </thead>
+        <tbody id="calendar-body">
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Funkcja do generowania kalendarza
+    function generateCalendar(year, month) {
+        const calendarBody = document.getElementById('calendar-body');
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+
+        // Wyczyszczenie poprzedniej zawartości kalendarza
+        calendarBody.innerHTML = '';
+
+        let date = 1;
+
+        // Tworzenie wierszy dla tygodni
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement('tr');
+
+            // Tworzenie komórek dla dni
+            for (let j = 0; j < 7; j++) {
+                const cell = document.createElement('td');
+                if (i === 0 && j < firstDayOfMonth) {
+                    // Puste komórki przed pierwszym dniem miesiąca
+                    const emptyCellText = document.createTextNode('');
+                    cell.appendChild(emptyCellText);
+                } else if (date > daysInMonth) {
+                    // Przerwanie pętli, jeśli dni miesiąca zostały wypełnione
+                    break;
+                } else {
+                    // Uzupełnienie komórki dniem
+                    const dateText = document.createTextNode(date);
+                    cell.appendChild(dateText);
+                    
+                    // Dodanie przycisku
+                    const button = document.createElement('button');
+                    button.textContent = 'Przejdź';
+                    button.onclick = function() {
+                        // Przekierowanie do strony z tytułem równym dacie
+                        const pageTitle = year + '-' + (month + 1) + '-' + date;
+                        window.location.href = pageTitle + '.html';
+                    };
+                    cell.appendChild(document.createElement('br'));
+                    cell.appendChild(button);
+                    
+                    date++;
+                }
+                row.appendChild(cell);
+            }
+
+            calendarBody.appendChild(row);
+        }
+    }
+
+    // Pobranie bieżącej daty
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth();
+
+    // Wygenerowanie kalendarza dla bieżącego miesiąca
+    generateCalendar(currentYear, currentMonth);
+</script>
+
+</body>
+</html>

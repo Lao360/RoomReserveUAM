@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#monthly-calendar, #weekly-calendar {
+    margin-bottom: 50px;
+}
+
+#calendar, #week-calendar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#calendar th, #calendar td, #week-calendar th, #week-calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#calendar th, #week-calendar th {
+    background-color: #f2f2f2;
+}
+
+#calendar td:hover, #week-calendar td:hover {
+    background-color: #f2f2f2;
+}
+
+#calendar td.selected, #week-calendar td.selected {
+    background-color: #ffcc00;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+select {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#selected-date-info {
+    margin-top: 20px;
+    font-weight: bold;
+}
