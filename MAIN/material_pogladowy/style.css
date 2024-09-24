@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D3D3D3;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    position: relative;
+    margin-right: 30px; /* Dodanie odstępów między tytułami w menu */
+}
+
+.menu-left ul li a {
+    color: white; /* Zmienia kolor napisów na biały */
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+/* Ukrywanie rozwijanego menu (dropdown) */
+.menu ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.menu ul li .dropdown li {
+    display: block;
+}
+
+.menu ul li .dropdown li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu ul li .dropdown li a:hover {
+    background-color: #444;
+}
+
+/* Pokazywanie rozwijanego menu (dropdown) po najechaniu */
+.menu ul li:hover .dropdown {
+    display: block;
+}
+
+.menu ul li:hover > a {
+    background-color: #444;
+}
+
+/* Wyszukiwarka */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Odstęp między kontem a wyszukiwarką */
+}
+
+.search-bar input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+}
+
+.search-bar button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Informacje o koncie po prawej i wyszukiwanie */
+.menu-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu-right ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-right ul li {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px; /* Dodanie odstępu między elementami konta a wyszukiwarką */
+}
+
+.menu-right ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.menu-right ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.menu-right ul ul li {
+    display: block;
+}
+
+.menu-right ul ul li a {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+}
+
+.menu-right ul ul li a:hover {
+    background-color: #444;
+}
+
+.menu-right ul li:hover > ul {
+    display: block;
+}
+
+.menu-right ul li:hover > a {
+    background-color: #444;
+}

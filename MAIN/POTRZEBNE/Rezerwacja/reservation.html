@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wniosek o rezerwacje - RoomReserveUAM</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+
+<header>
+            <h1>RoomReserveUAM</h1>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Strona g?��wna</a></li>
+                    <li><a href="search.html">Wyszukiwanie wolnych sal</a></li>
+                    <li><a href="reservation.html">Wyszukiwanie sal</a></li>
+                    <li><a href="my_reservations.html">Moje rezerwacje</a></li>
+                    <li><a href="my_events.html">wydarzenia</a></li>
+                    <li><a href="login.html">Logowanie</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <h2>Wniosek o rezerwację wydarzenia</h2>
+            <form id="event-reservation-form" method="post">
+
+                <!-- Informacje o wydarzeniu -->
+                <h3>Informacje o wydarzeniu</h3>
+
+                <label for="event-name">Nazwa wydarzenia:</label>
+                <input type="text" id="event-name" name="eventname" required>
+
+                <label for="event-description">Opis wydarzenia:</label>
+                <textarea id="event-description" name="eventdescription" rows="4" required></textarea>
+
+                <label for="event-date-start">Data początkowa wydarzenia:</label>
+                <input type="date" id="event-date-start" name="eventdatestart" required>
+
+                <label for="event-date-end">Data końcowa wydarzenia:</label>
+                <input type="date" id="event-date-end" name="eventdateend" required>
+
+                <label for="participants">Liczba uczestników:</label>
+                <input type="number" id="participants" name="participants" min="1" required>
+
+                <!-- Dodatkowe wymagania -->
+                <h3>Dodatkowe wymagania</h3>
+				
+					<div class="filter-group">
+                    <button type="button" class="dropdown-toggle">Rozwiń/Ukryj dodatkowe wymagania</button>
+                    <ul class="dropdown-content">
+                        <li><label><input type="checkbox" name="rzutnik"> Rzutnik</label></li>
+                        <li><label><input type="checkbox" name="umywalka"> Umywalka</label></li>
+                        <li><label><input type="checkbox" name="tablica"> Tablica</label></li>
+                        <li><label>Ile tablic?: <input type="number" name="tablica-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="tablica-interaktywna"> Tablica interaktywna</label></li>
+                        <li><label><input type="checkbox" name="komputer"> Komputer</label></li>
+                        <li><label>Ile komputerów?: <input type="number" name="komputer-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="mikrofon-bezprzewodowy"> Mikrofon bezprzewodowy</label></li>
+                        <li><label><input type="checkbox" name="wizualizer"> Wizualizer</label></li>
+                        <li><label><input type="checkbox" name="dostep-internet"> Dostęp do Internetu</label></li>
+                        <li><label><input type="checkbox" name="stoliki-audytoryjne"> Stoliki audytoryjne</label></li>
+                        <li><label>Ile stolików?: <input type="number" name="stoliki-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="miejsca-siedzace"> Miejsca siedzące</label></li>
+                        <li><label>Ile miejsc siedzących?: <input type="number" name="miejsca-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="flipchart"> Flipchart</label></li>
+                        <li><label>Ile flipchartów?: <input type="number" name="flipchart-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="prysznic"> Prysznic</label></li>
+                        <li><label>Ile pryszniców?: <input type="number" name="prysznic-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="stoly-kwasoodporne"> Stoły kwasoodporne</label></li>
+                        <li><label>Ile stołów kwasoodpornych?: <input type="number" name="stoly-ilosc" min="0"></label></li>
+                        <li><label><input type="checkbox" name="serwer"> Serwer</label></li>
+                        <li><label><input type="checkbox" name="urzadzenia-sieciowe"> Urządzenia sieciowe</label></li>
+                        <li><label>Jakie urządzenia sieciowe?: <input type="text" name="urzadzenia-rodzaj"></label></li>
+                        <li><label>Ile urządzeń?: <input type="number" name="urzadzenia-ilosc" min="0"></label></li>
+                    </ul>
+                </div>
+                <!-- Segmenty wydarzenia -->
+                <h3>Segmenty wydarzenia</h3>
+
+                <div id="segments">
+                    <div class="segment">
+                        <label for="segment-name-1">Nazwa segmentu:</label>
+                        <input type="text" id="segment-name-1" name="segmentname[]" required>
+
+                        <label for="segment-lecturer-1">Prowadzący segment:</label>
+                        <select id="segment-lecturer-1" name="segmentlecturer[]" required>
+                            <option value="" disabled selected>Wybierz prowadzącego</option>
+                            <option value="wykladowca1">Wykładowca 1</option>
+                            <option value="wykladowca2">Wykładowca 2</option>
+                            <option value="wykladowca3">Wykładowca 3</option>
+                        </select>
+
+                        <label for="segment-description-1">Opis segmentu:</label>
+                        <textarea id="segment-description-1" name="segmentdescription[]" rows="3" required></textarea>
+
+                        <label for="segment-date-1">Data segmentu:</label>
+                        <input type="date" id="segment-date-1" name="segmentdate[]" required>
+
+                        <label for="segment-time-start-1">Godzina początkowa segmentu:</label>
+                        <input type="time" id="segment-time-start-1" name="segmenttimestart[]" required>
+
+                        <label for="segment-time-end-1">Godzina końcowa segmentu:</label>
+                        <input type="time" id="segment-time-end-1" name="segmenttimeend[]" required>
+
+                        <label for="segment-participants-1">Liczba uczestników w segmencie:</label>
+                        <input type="number" id="segment-participants-1" name="segmentparticipants[]" min="1" required>
+                    </div>
+                </div>
+
+                <button type="button" id="add-segment-btn">Dodaj kolejny segment</button>
+
+                <button type="submit">Zarezerwuj</button>
+            </form>
+            
+            <div id="search-results">
+                <!-- Wyniki wyszukiwania zostaną wyświetlone tutaj -->
+            </div>
+        </div>
+    </div>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>

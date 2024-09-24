@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rejestracja, Logowanie i Dodawanie Danych</title>
+  <script>
+    // Rejestracja
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('register-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('register-username').value;
+        const password = document.getElementById('register-password').value;
+
+        fetch('http://localhost:3003/api/register', { // Zmieniono port na 3003
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+        })
+        .catch(error => console.error('Błąd:', error));
+      });
+
+      // Logowanie
+      document.getElementById('login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('login-username').value;
+        const password = document.getElementById('login-password').value;
+
+        fetch('http://localhost:3003/api/login', { // Zmieniono port na 3003
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.token) {
+            alert('Zalogowano pomyślnie');
+            console.log('Token JWT:', data.token);
+          } else {
+            alert(data.error);
+          }
+        })
+        .catch(error => console.error('Błąd:', error));
+      });
+
+      // Dodawanie nowego rekordu do tabeli "dane"
+      document.getElementById('add-data-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const imie = document.getElementById('imie').value;
+        const nazwisko = document.getElementById('nazwisko').value;
+        const wydzial = document.getElementById('wydzial').value;
+
+        fetch('http://localhost:3003/api/add-data', { // Zmieniono port na 3003
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ imie, nazwisko, wydzial })
+        })
+        .then(response => response.json())
+        .then(data => {
+          alert(data.message);
+        })
+        .catch(error => console.error('Błąd:', error));
+      });
+
+      // Wyświetlenie wszystkich danych z tabeli "dane"
+      document.getElementById('show-data-btn').addEventListener('click', function() {
+        fetch('http://localhost:3003/api/get-data') // Zmieniono port na 3003
+          .then(response => response.json())
+          .then(data => {
+            const tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = '';
+
+            data.forEach(record => {
+              const row = document.createElement('tr');
+              row.innerHTML = `
+                <td>${record.id}</td>
+                <td>${record.imie}</td>
+                <td>${record.nazwisko}</td>
+                <td>${record.wydzial}</td>
+              `;
+              tableBody.appendChild(row);
+            });
+
+            document.getElementById('data-table').style.display = 'table';
+          })
+          .catch(error => console.error('Błąd:', error));
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>Rejestracja</h1>
+  <form id="register-form">
+    <input type="text" id="register-username" placeholder="Nazwa użytkownika" required>
+    <input type="password" id="register-password" placeholder="Hasło" required>
+    <button type="submit">Zarejestruj się</button>
+  </form>
+
+  <h1>Logowanie</h1>
+  <form id="login-form">
+    <input type="text" id="login-username" placeholder="Nazwa użytkownika" required>
+    <input type="password" id="login-password" placeholder="Hasło" required>
+    <button type="submit">Zaloguj się</button>
+  </form>
+
+  <h1>Dodaj nowy rekord do tabeli "dane"</h1>
+  <form id="add-data-form">
+    <input type="text" id="imie" placeholder="Imię" required>
+    <input type="text" id="nazwisko" placeholder="Nazwisko" required>
+    <input type="text" id="wydzial" placeholder="Wydział" required>
+    <button type="submit">Dodaj</button>
+  </form>
+
+  <h1>Wyświetl dane</h1>
+  <button id="show-data-btn">Pokaż dane</button>
+  <table id="data-table" style="display: none;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Imię</th>
+        <th>Nazwisko</th>
+        <th>Wydział</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Wiersze danych będą dodawane tutaj -->
+    </tbody>
+  </table>
+</body>
+</html>

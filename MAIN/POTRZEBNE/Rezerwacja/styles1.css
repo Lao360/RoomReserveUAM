@@ -1,0 +1,106 @@
+/* Stylizacja kontenera i formularza */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button, textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Stylizacja menu */
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    background-color: #111;
+}
+
+/* Stylizacja akordeonu */
+.dropdown-content {
+    display: none; /* Ukrycie listy początkowo */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.dropdown-content label,
+.dropdown-content input {
+    display: block;
+    margin: 10px 0;
+}
+
+/* Stylizacja przycisku do rozwijania */
+.dropdown-toggle {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+}
+
+.dropdown-toggle:hover {
+    background-color: #45a049;
+}
+/* Stylizacja kontenera dla dodatkowych wymagań */
+.filter-group {
+    margin-top: 20px;
+}
